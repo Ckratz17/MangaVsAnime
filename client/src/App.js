@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+import Header from "./components/Header";
+import MainContent from "./components/Main";
 
 function App() {
+  const [animeList, SetAnimeList] = useState([])
+  const [mangaList, SetMangaList] = useState([])
+  const [search, SetSearch] = useState("")
+
+  const HandleSearch = e => {
+    e.preventDeafault()
+   
+    FetchAnime(search)
+  }
+
+  const FetchAnime = async(query) => {
+    const temp = await fetch(`https://kitsu.io/api/edge/anime?q=${query}&limit=1`)
+      .then(res => res.json())
+
+      console.log(temp.results)
+
+      SetAnimeList(temp.results)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <MainContent
+        HandleSearch={HandleSearch}
+        search={search}
+        SetSearch={SetSearch} 
+        animeList={animeList}
+       />
+    </>
   );
 }
 
 export default App;
+

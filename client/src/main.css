@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    box-sizing: border-box;
+  }/*# sourceMappingURL=main.css.map */
+  
+  .jumbotron {
+    height: 400px;
+    width: 100%;
+  }
+  
+  .searchBar {
+    width: 100%;
+    color: white;
+    border-radius: 20px;
+    border-color: red;
+    padding: 10px;
+  }
