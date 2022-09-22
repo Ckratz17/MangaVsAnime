@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+
+import React, { useState, useEffect } from 'react'
 import Header from "./components/Header";
 import MainContent from "./components/Main";
 
@@ -13,8 +14,8 @@ function App() {
     FetchAnime(search)
   }
 
-  const FetchAnime = async(query) => {
-    const temp = await fetch(`https://kitsu.io/api/edge/anime?q=${query}&limit=1`)
+  const FetchAnime = async(search) => {
+    const temp = await fetch(`https://kitsu.io/api/edge/anime?q=${search}&limit=1`)
       .then(res => res.json())
 
       console.log(temp.results)
@@ -25,15 +26,14 @@ function App() {
   return (
     <>
       <Header />
-      <MainContent
-        HandleSearch={HandleSearch}
-        search={search}
-        SetSearch={SetSearch} 
-        animeList={animeList}
-       />
+        <MainContent
+          HandleSearch={HandleSearch}
+          search={search}
+          SetSearch={SetSearch} 
+          animeList={animeList}
+        />
     </>
   );
 }
 
 export default App;
-
