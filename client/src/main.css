@@ -1,19 +1,25 @@
 * {
-    margin: 0;
-    padding: 0;
-    background-color: black;
-    box-sizing: border-box;
-  }/*# sourceMappingURL=main.css.map */
-  
-  .jumbotron {
-    height: 400px;
-    width: 100%;
-  }
-  
-  .searchBar {
-    width: 100%;
-    color: white;
-    border-radius: 20px;
-    border-color: red;
-    padding: 10px;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+}
+
+/*# sourceMappingURL=main.css.map */
+
+.image {
+  height: 400px;
+  width: 100%;
+  padding-bottom: 5px;
+}
+
+.searchBar {
+  width: 100%;
+  color: white;
+  border-radius: 20px;
+  border-color: red;
+  padding: 10px;
+}
